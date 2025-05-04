@@ -2,43 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
+  <title>Tip calculator app</title>
 </head>
 <body>
+  <img src="images/logo.svg" alt="SPLITTER Logo">
+  <main class="container">
+    <form id="tip-form" action="">
+      <div class="bill-container">
+        <label for="bill">Bill</label>
+        <input type="number" id="bill" id="bill" value="142.55">
+      </div>
+      <div class="tip-selection-container">
+        <label for="tip">Select Tip %</label>
+        <button class="tip-button">5%</button>
+        <button class="tip-button">10%</button>
+        <button class="tip-button">15%</button>
+        <button class="tip-button">25%</button>
+        <button class="tip-button">50%</button>
+        <button class="custom-button">Custom</button>
+      </div>
+      <div class="people-container">
+        <label for="people">Number of People</label>
+        <input type="number" name="people" id="people" value="5">
+      </div>
+    </form>
 
-  Bill
+    <div class="results-container">
+      <div class="results-row">
+        <div class="label">
+          <p>Tip Amount</p>
+          <p>/ person</p>
+        </div>
+        <p id="tip-amount" class="amount">$4.27</p>
+      </div>
+      <div class="results-row">
+        <div class="label">
+          <p>Total</p>
+          <p>/ person</p>
+        </div>
+        <p id="total-amount" class="amount">$32.79</p>
+      </div>
+      <button id="reset-button" class="button">Reset</button>
+    </div>
+  </main>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    Coded by <a href="https://github.com/mpujazon/">Miguel Pujazón Cárdenas</a>.
+  </footer>
 </body>
 </html>
