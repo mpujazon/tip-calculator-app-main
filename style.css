@@ -1,2 +1,228 @@
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Variables */
+:root{
+    --clr-white: #FFF;
+    --clr-black: #000;
+    --clr-grey-600: #3D6666;
+    --clr-grey-550: #547878;
+    --clr-grey-500: #5E7A7D;
+    --clr-grey-400: #7F9D9F;
+    --clr-grey-300: #9EBBBD;
+    --clr-grey-200: #C5E4E7;
+    --clr-grey-50: #F3F9FA;
+    --clr-green-900: #00474B;
+    --clr-green-800: #085C61;
+    --clr-green-750: #0D686D;
+    --clr-green-400: #26C2AE;
+    --clr-green-200: #9FE8DF;
+    --clr-orange-400: #E17052;
+
+    --spacing-0: 0;
+    --spacing-100: .5rem;
+    --spacing-200: 1rem;
+    --spacing-300: 1.5rem;
+    --spacing-400: 2rem;
+    --spacing-600: 3rem;
+    --spacing-1000: 5rem;
+    --spacing-1200: 6rem;
+    --spacing-1500: 7.5rem;
+    --spacing-1600: 8rem;
+}
+
+/* CSS Reset */
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Mobile Layout */
+body{
+    font-family: 'Space Mono', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--clr-grey-200);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.logo{
+    width: 5.4162rem;
+    margin: 0 auto;
+    padding-top: 3.125rem;
+    padding-bottom: 2.5537rem;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-400);
+    padding: var(--spacing-400) var(--spacing-300);
+    background-color: var(--clr-white);
+    border-radius: 1.5625rem 1.5625rem 0 0;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-400);
+}
+form label{
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    color: var(--clr-grey-500);
+}
+form .label-error{
+    display: flex;
+    justify-content: space-between;
+}
+form .error{
+    color: var(--clr-orange-400);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+}
+form .error.hidden{
+    display: none;
+}
+form input{
+    font-family: 'Space Mono', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2.25rem;
+    text-align: right;
+    border: 0;
+    border-radius: 5px;
+    color: var(--clr-green-900);
+    background-color: var(--clr-grey-50);
+    padding: var(--spacing-100) var(--spacing-200);
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+input[type=number] { 
+    -moz-appearance:textfield;
+    appearance: textfield;
+}
+form input:focus{
+    outline: var(--clr-green-400) solid .125rem;
+    outline-offset: 2px;
+}
+form input.invalid{
+    outline: var(--clr-orange-400) solid .125rem;
+    outline-offset: 2px;
+}
+form #bill-input{
+    background: url('images/icon-dollar.svg') no-repeat scroll 1.25rem 1.0625rem;
+    background-color: var(--clr-grey-50);
+}
+form .input-group{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-100);
+}
+.buttons-group{
+    display: grid;
+    grid-template-columns: repeat(2,  1fr);
+    gap: var(--spacing-200);
+}
+button{
+    padding: var(--spacing-100) var(--spacing-200);
+    background-color: var(--clr-green-900);
+    color: var(--clr-grey-50);
+    font-family: 'Space Mono', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2.25rem;
+    border: 0;
+    border-radius: .3125rem;
+    min-width: 7.5rem;
+    transition: color, background-color .2s ease-in-out;
+}
+button.custom-button{
+    background-color: var(--clr-grey-50);
+    color: var(--clr-grey-550);
+}
+button:hover{
+    background-color: var(--clr-green-200);
+    color: var(--clr-green-900);
+    cursor: pointer;
+}
+button:active{
+    scale: 1.02;
+}
+button.selected{
+    color: var(--clr-green-900);
+    background-color: var(--clr-green-400);
+}
+form #people-input{
+    background: url('images/icon-person.svg') no-repeat scroll 1.25rem 1.0625rem;
+    background-color: var(--clr-grey-50);
+}
+
+.results-container{
+    background-color: var(--clr-green-900);
+    border-radius: 15px;
+    padding: var(--spacing-300);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-400);
+}
+.results-container .rows{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-300);
+}
+.results-container .row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.results-container .label p{
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    color: var(--clr-white);
+}
+.results-container .label span{
+    font-size: .8125rem;
+    font-weight: 700;
+    line-height: 1.1875rem;
+    color: var(--clr-grey-400);
+}
+.results-container .amount{
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: auto;
+    letter-spacing: -0.0419rem;
+    color: var(--clr-green-400);
+    text-align: right;
+}
+#reset-button{
+    background-color: var(--clr-green-400);
+    color: var(--clr-green-900);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.875rem;
+}
+#reset-button:hover{
+    background-color: var(--clr-green-200);
+}
+#reset-button:active{
+    scale: initial;
+}
+.attribution { 
+    font-size: .6875rem; text-align: center;
+    background-color: var(--clr-white);
+    font-size: .75rem;
+    padding: 1rem;
+}
+.attribution a {
+    color: var(--clr-green-900);
+    font-weight: 500;
+    text-decoration: none;
+}

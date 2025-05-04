@@ -9,49 +9,55 @@
   <title>Tip calculator app</title>
 </head>
 <body>
-  <img src="images/logo.svg" alt="SPLITTER Logo">
+  <img class="logo" src="images/logo.svg" alt="SPLITTER Logo">
   <main class="container">
     <form id="tip-form" action="">
-      <div class="bill-container">
+      <div class="bill-container input-group">
         <label for="bill">Bill</label>
-        <input type="number" id="bill" id="bill" value="142.55">
+        <input type="number" id="bill-input" id="bill" placeholder="0" value="142.55">
       </div>
-      <div class="tip-selection-container">
+      <div class="tip-selection-container input-group">
         <label for="tip">Select Tip %</label>
-        <button class="tip-button">5%</button>
-        <button class="tip-button">10%</button>
-        <button class="tip-button">15%</button>
-        <button class="tip-button">25%</button>
-        <button class="tip-button">50%</button>
-        <button class="custom-button">Custom</button>
+        <div class="buttons-group">
+          <button class="tip-button">5%</button>
+          <button class="tip-button">10%</button>
+          <button class="tip-button">15%</button>
+          <button class="tip-button">25%</button>
+          <button class="tip-button">50%</button>
+          <button class="custom-button">Custom</button>
+        </div>
       </div>
-      <div class="people-container">
-        <label for="people">Number of People</label>
-        <input type="number" name="people" id="people" value="5">
+      <div class="people-container input-group">
+        <div class="label-error">
+          <label for="people">Number of People</label><span class="error hidden">Can't be zero</span>
+        </div>
+        <input type="number" name="people" id="people-input" placeholder="0" value="5">
       </div>
     </form>
 
     <div class="results-container">
-      <div class="results-row">
-        <div class="label">
-          <p>Tip Amount</p>
-          <p>/ person</p>
+      <div class="rows">
+        <div class="row">
+          <div class="label">
+            <p>Tip Amount</p>
+            <span>/ person</span>
+          </div>
+          <p id="tip-amount" class="amount">$4.27</p>
         </div>
-        <p id="tip-amount" class="amount">$4.27</p>
-      </div>
-      <div class="results-row">
-        <div class="label">
-          <p>Total</p>
-          <p>/ person</p>
+        <div class="row">
+          <div class="label">
+            <p>Total</p>
+            <span>/ person</span>
+          </div>
+          <p id="total-amount" class="amount">$32.79</p>
         </div>
-        <p id="total-amount" class="amount">$32.79</p>
       </div>
-      <button id="reset-button" class="button">Reset</button>
+      <button id="reset-button" class="button">RESET</button>
     </div>
   </main>
 
   <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.<br> 
     Coded by <a href="https://github.com/mpujazon/">Miguel Pujazón Cárdenas</a>.
   </footer>
 </body>
