@@ -10,14 +10,9 @@ const peopleError = document.getElementById('people-error');
 
 let selectedTip;
 
-// Functions
-const updateSelectedTip = (e) => {
-    enableReset();
-    resetTipButtons();
-    e.target.classList.add('selected');
-    selectedTip = parseFloat(e.target.value);
-}
+//Functions
 
+// Handles every change in the form (inputs and buttons).
 const handleFormChange = () => {
     enableReset();
     if(validateInputs() && selectedTip){
@@ -25,6 +20,15 @@ const handleFormChange = () => {
     }
 }
 
+// Updates the selected tip chosen by the user, enables the reset feature, and manages the appearance of the tip buttons.
+const updateSelectedTip = (e) => {
+    enableReset();
+    resetTipButtons();
+    e.target.classList.add('selected');
+    selectedTip = parseFloat(e.target.value);
+}
+
+// Validates the inputs and manages the visual appearance of the inputs.
 const validateInputs = () => {
     let isBillValid = true;
     let isPeopleValid = true;
@@ -32,19 +36,18 @@ const validateInputs = () => {
     const billValue = parseFloat(billInput.value);
     if (isNaN(billValue)) {
         billInput.classList.add('invalid');
-        isBillValid = false;
         billError.classList.remove('hidden');
+        isBillValid = false;
     } else {
         billInput.classList.remove('invalid');
         billError.classList.add('hidden');
-
     }
 
     const peopleValue = parseInt(peopleInput.value);
     if (isNaN(peopleValue)) {
         peopleInput.classList.add('invalid');
-        isPeopleValid = false;
         peopleError.classList.remove('hidden');
+        isPeopleValid = false;
     } else {
         peopleInput.classList.remove('invalid');
         peopleError.classList.add('hidden');
@@ -52,6 +55,7 @@ const validateInputs = () => {
     return isBillValid && isPeopleValid;
 }
 
+// Calculates the tip and total amount and updates the values in the results container.
 const calculateTip = () => {
     const currentTipAmount = (parseFloat(billInput.value)*(selectedTip)).toFixed(2);
     const currentTotalAmount = (parseFloat((billInput.value)*(selectedTip+1))/peopleInput.value).toFixed(2);
@@ -60,6 +64,7 @@ const calculateTip = () => {
     totalAmount.textContent = "$ " + currentTotalAmount;
 }
 
+// Manages the reset when the user clicks the reset button.
 const handleReset = () => {
     resetButton.disabled = true;
     cleanForm();
@@ -69,6 +74,8 @@ const handleReset = () => {
     billError.classList.add('hidden');
     peopleError.classList.add('hidden');
 }
+
+// Cleans the form inputs and the tip selected button.
 const cleanForm = (e) => {
     tipAmount.textContent = '$0.00';
     totalAmount.textContent = '$0.00';
@@ -76,12 +83,14 @@ const cleanForm = (e) => {
     tipForm.reset();
 }
 
+// Removes the selected style on tip buttons.
 const resetTipButtons = () => {
     buttonsGroup.forEach(element => {
         element.classList.remove('selected');
     });
 }
 
+//Enables the reset feature.
 const enableReset = () => {
     resetButton.disabled = false;
 }
@@ -92,5 +101,4 @@ buttonsGroup.forEach(element => {
     element.addEventListener('click', handleFormChange);
 });
 tipForm.addEventListener('input', handleFormChange);
-resetButton.addEventListener('click', handleReset)
-
+resetButton.addEventListener('click', handleReset);

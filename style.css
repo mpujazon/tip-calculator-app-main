@@ -98,16 +98,17 @@ form input{
     background-color: var(--clr-grey-50);
     padding: var(--spacing-100) var(--spacing-200);
 }
+/* Hides the input spin buttons. */
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
     -webkit-appearance: none; 
     margin: 0; 
 }
-
 input[type=number] { 
     -moz-appearance:textfield;
     appearance: textfield;
 }
+
 form input:focus{
     outline: var(--clr-green-400) solid .125rem;
     outline-offset: 2px;
@@ -162,12 +163,10 @@ button.selected{
 #reset-button:disabled{
     opacity: .3;
 }
-
 form #people-input{
     background: url('images/icon-person.svg') no-repeat scroll 1.25rem 1.0625rem;
     background-color: var(--clr-grey-50);
 }
-
 .results-container{
     background-color: var(--clr-green-900);
     border-radius: 15px;
@@ -231,7 +230,7 @@ form #people-input{
     text-decoration: none;
 }
 
-/* Tablet Layout */
+/* Tablet Breakpoint */
 @media (min-width: 37.5rem){
     .container{
         width: 38rem;
@@ -258,11 +257,11 @@ form #people-input{
     }
 }
 
+/* Desktop breakpoint */
 @media (min-width: 67.5rem){
     .logo{
         margin: 0;
         padding: 0;
-
     }
     body{
         align-items: center;
@@ -283,5 +282,4 @@ form #people-input{
     .results-container .rows{
         gap: var(--spacing-300);
     }
-    
 }
