@@ -61,6 +61,7 @@ body{
     padding: var(--spacing-400) var(--spacing-300);
     background-color: var(--clr-white);
     border-radius: 1.5625rem 1.5625rem 0 0;
+    box-shadow: hsla(186, 38%, 50%, .2007) 0 2rem 2.6875rem 0;
 }
 form{
     display: flex;
@@ -253,6 +254,7 @@ form #people-input{
         letter-spacing: -0.0625rem;
     }
     .attribution{
+        margin-top: 4rem;
         background-color: var(--clr-grey-200);
     }
 }
@@ -281,5 +283,8 @@ form #people-input{
     }
     .results-container .rows{
         gap: var(--spacing-300);
+    }
+    .attribution{
+        margin: 0;
     }
 }
