@@ -125,7 +125,7 @@ form .input-group{
     flex-direction: column;
     gap: var(--spacing-100);
 }
-.buttons-group{
+#buttons-group{
     display: grid;
     grid-template-columns: repeat(2,  1fr);
     gap: var(--spacing-200);
@@ -159,6 +159,10 @@ button.selected{
     color: var(--clr-green-900);
     background-color: var(--clr-green-400);
 }
+#reset-button:disabled{
+    opacity: .3;
+}
+
 form #people-input{
     background: url('images/icon-person.svg') no-repeat scroll 1.25rem 1.0625rem;
     background-color: var(--clr-grey-50);
@@ -235,7 +239,7 @@ form #people-input{
         border-radius: 1.5625rem;
         padding: 3.375rem 4.7188rem;
     }
-    .buttons-group{
+    #buttons-group{
         grid-template-columns: repeat(3, 1fr);
     }
     .results-container{

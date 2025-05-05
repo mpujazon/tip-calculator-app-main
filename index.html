@@ -11,27 +11,29 @@
 <body>
   <img class="logo" src="images/logo.svg" alt="SPLITTER Logo">
   <main class="container">
-    <form id="tip-form" action="">
+    <form id="tip-form" action="javascript:void(0);">
       <div class="bill-container input-group">
-        <label for="bill">Bill</label>
-        <input type="number" id="bill-input" id="bill" placeholder="0" value="142.55">
+        <div class="label-error">
+          <label for="bill">Bill</label><span id="bill-error" class="error hidden">Can't be zero</span>
+        </div>
+        <input type="number" id="bill-input" placeholder="0">
       </div>
       <div class="tip-selection-container input-group">
         <label for="tip">Select Tip %</label>
-        <div class="buttons-group">
-          <button class="tip-button">5%</button>
-          <button class="tip-button">10%</button>
-          <button class="tip-button">15%</button>
-          <button class="tip-button">25%</button>
-          <button class="tip-button">50%</button>
-          <button class="custom-button">Custom</button>
+        <div id="buttons-group">
+          <button class="tip-button" value=".05">5%</button>
+          <button class="tip-button" value=".1">10%</button>
+          <button class="tip-button" value=".15">15%</button>
+          <button class="tip-button" value=".25">25%</button>
+          <button class="tip-button" value=".5">50%</button>
+          <button class="custom-button" disabled>Custom</button>
         </div>
       </div>
       <div class="people-container input-group">
         <div class="label-error">
-          <label for="people">Number of People</label><span class="error hidden">Can't be zero</span>
+          <label for="people">Number of People</label><span id="people-error" class="error hidden">Can't be zero</span>
         </div>
-        <input type="number" name="people" id="people-input" placeholder="0" value="5">
+        <input type="number" name="people" id="people-input" placeholder="0">
       </div>
     </form>
 
@@ -42,17 +44,17 @@
             <p>Tip Amount</p>
             <span>/ person</span>
           </div>
-          <p id="tip-amount" class="amount">$4.27</p>
+          <p id="tip-amount" class="amount">$0.00</p>
         </div>
         <div class="row">
           <div class="label">
             <p>Total</p>
             <span>/ person</span>
           </div>
-          <p id="total-amount" class="amount">$32.79</p>
+          <p id="total-amount" class="amount">$0.00</p>
         </div>
       </div>
-      <button id="reset-button" class="button">RESET</button>
+      <button id="reset-button" class="button" disabled>RESET</button>
     </div>
   </main>
 
